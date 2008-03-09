@@ -1,0 +1,11 @@
+--- dosbox-0.72.orig/src/ints/xms.cpp
++++ dosbox-0.72/src/ints/xms.cpp
+@@ -329,7 +329,7 @@
+ 		SET_RESULT(XMS_UnlockMemory(reg_dx));
+ 		break;
+ 	case XMS_GET_EMB_HANDLE_INFORMATION:  						/* 0e */
+-		SET_RESULT(XMS_GetHandleInformation(reg_dx,reg_bh,reg_bl,reg_dx));
++		SET_RESULT(XMS_GetHandleInformation(reg_dx,reg_bh,reg_bl,reg_dx),false);
+ 		break;
+ 	case XMS_RESIZE_ANY_EXTENDED_MEMORY_BLOCK:					/* 0x8f */
+ 		if(reg_ebx > reg_bx) LOG_MSG("64MB memory limit!");

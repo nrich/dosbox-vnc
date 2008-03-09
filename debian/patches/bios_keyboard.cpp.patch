@@ -1,0 +1,11 @@
+--- dosbox-0.72.orig/src/ints/bios_keyboard.cpp	2007-01-10 11:17:39.000000000 +0100
++++ dosbox-0.72/src/ints/bios_keyboard.cpp	2008-03-02 12:32:45.000000000 +0100
+@@ -27,7 +27,7 @@
+ /* SDL by default treats numlock and scrolllock different from all other keys.
+  * Some linux distros disable this bad behaviour. (for example debian) 
+  * Define the following if this is the case */
+-//#define CAN_USE_LOCK 1
++#define CAN_USE_LOCK 1
+ 
+ static Bitu call_int16,call_irq1,call_irq6;
+ 
