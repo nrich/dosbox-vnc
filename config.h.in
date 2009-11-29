@@ -2,7 +2,7 @@
 
 
 /*
- *  Copyright (C) 2002-2007  The DOSBox Team
+ *  Copyright (C) 2002-2009  The DOSBox Team
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -19,6 +19,15 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+
+/* Compiling on BSD */
+#undef BSD
+
+/* Determines if the compilers supports always_inline attribute. */
+#undef C_ATTRIBUTE_ALWAYS_INLINE
+
+/* Determines if the compilers supports fastcall attribute. */
+#undef C_ATTRIBUTE_FASTCALL
 
 /* Define to 1 to use inlined memory functions in cpu core */
 #undef C_CORE_INLINE
@@ -80,8 +89,14 @@
 /* Define to 1 to use a unaligned memory access */
 #undef C_UNALIGNED_MEMORY
 
+/* define to 1 if you have XKBlib.h and X11 lib */
+#undef C_X11_XKB
+
 /* libm doesn't include powf */
 #undef DB_HAVE_NO_POWF
+
+/* struct dirent has d_type */
+#undef DIRENT_HAS_D_TYPE
 
 /* environ can be included */
 #undef ENVIRON_INCLUDED
@@ -100,9 +115,6 @@
 
 /* Define to 1 if you have the `asound' library (-lasound). */
 #undef HAVE_LIBASOUND
-
-/* Define to 1 if you have the `m' library (-lm). */
-#undef HAVE_LIBM
 
 /* Define to 1 if you have the <memory.h> header file. */
 #undef HAVE_MEMORY_H
@@ -210,7 +222,17 @@
 /* Define to `int` if you don't have socklen_t */
 #undef socklen_t
 
+#if C_ATTRIBUTE_ALWAYS_INLINE
+#define INLINE inline __attribute__((always_inline))
+#else
 #define INLINE inline
+#endif
+
+#if C_ATTRIBUTE_FASTCALL
+#define DB_FASTCALL __attribute__((fastcall))
+#else
+#define DB_FASTCALL
+#endif
 
 #if C_HAS_ATTRIBUTE
 #define GCC_ATTRIBUTE(x) __attribute__ ((x))
