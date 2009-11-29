@@ -1,3 +1,10 @@
+dosbox (0.73-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * add debian/watch (Closes: #530941)
+
+ -- Jan Dittberner <jandd@debian.org>  Sun, 29 Nov 2009 22:24:47 +0100
+
 dosbox (0.72-1.1) unstable; urgency=low
 
   * Non-maintainer upload.
