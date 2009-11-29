@@ -1,7 +1,13 @@
 dosbox (0.73-1) UNRELEASED; urgency=low
 
-  * New upstream release
+  * New upstream release (LP: #382024)
+  * remove non-free src/hardware/fmopl.c and src/hardware/fmopl.h
+    (Closes: #530824)
   * add debian/watch (Closes: #530941)
+  * remove old patches, applied upstream:
+    debian/patches/dos_keyboard_layout.cpp.patch,
+    debian/patches/dyn_fpu.h.patch, debian/patches/gcc-4.3.patch
+    debian/patches/sdlmain.cpp.patch, debian/patches/xms.cpp.patch
 
  -- Jan Dittberner <jandd@debian.org>  Sun, 29 Nov 2009 22:24:47 +0100
 
