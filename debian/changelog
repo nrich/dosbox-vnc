@@ -16,6 +16,8 @@ dosbox (0.73-1) UNRELEASED; urgency=low
     - update upstream copyright years, add package licensing and new
       maintainer information
   * add debian/watch (Closes: #530941)
+  * add debian/README.source with instructions how to produce the
+    original tarball
 
  -- Jan Dittberner <jandd@debian.org>  Sun, 29 Nov 2009 22:24:47 +0100
 
