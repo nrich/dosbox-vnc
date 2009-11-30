@@ -32,6 +32,7 @@ dosbox (0.73-1) UNRELEASED; urgency=low
     errors discovered by Lintian
   * add debian/patches/fix_manpage_errors.patch to fix warnings that
     lintian found in dosbox.1
+  * refresh debian/patches/bios_keyboard.cpp.patch
 
  -- Jan Dittberner <jandd@debian.org>  Sun, 29 Nov 2009 22:24:47 +0100
 
