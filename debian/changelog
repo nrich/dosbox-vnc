@@ -10,6 +10,7 @@ dosbox (0.73-1) UNRELEASED; urgency=low
     - new Maintainer (old Maintainer was inactive according to MIA db,
       Closes: #540821)
     - add Vcs-Git and Vcs-Browser fields
+    - add ${misc:Depends} to Depends
   * remove non-free src/hardware/fmopl.c and src/hardware/fmopl.h,
     add patch debian/patches/remove_fmopl_code.patch to remove fmopl
     dependencies (Closes: #530824)
