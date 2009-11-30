@@ -35,6 +35,7 @@ dosbox (0.73-1) UNRELEASED; urgency=low
   * add debian/patches/fix_manpage_errors.patch to fix warnings that
     lintian found in dosbox.1
   * add DEP-3 descriptions to patches
+  * add debian/src/format for source format 3.0 (quilt)
 
  -- Jan Dittberner <jandd@debian.org>  Sun, 29 Nov 2009 22:24:47 +0100
 
