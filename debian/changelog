@@ -1,4 +1,4 @@
-dosbox (0.73-1) UNRELEASED; urgency=low
+dosbox (0.73-1) unstable; urgency=low
 
   * New upstream release (LP: #382024, Closes: #530940)
   * Include fixes from NMU (Closes: #417159), thanks to James Vega
@@ -37,7 +37,7 @@ dosbox (0.73-1) UNRELEASED; urgency=low
   * add DEP-3 descriptions to patches
   * add debian/src/format for source format 3.0 (quilt)
 
- -- Jan Dittberner <jandd@debian.org>  Sun, 29 Nov 2009 22:24:47 +0100
+ -- Jan Dittberner <jandd@debian.org>  Mon, 30 Nov 2009 21:47:41 +0100
 
 dosbox (0.72-1.1) unstable; urgency=low
 
