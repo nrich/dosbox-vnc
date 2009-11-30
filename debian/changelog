@@ -19,6 +19,8 @@ dosbox (0.73-1) UNRELEASED; urgency=low
   * add debian/watch (Closes: #530941)
   * add debian/README.source with instructions how to produce the
     original tarball
+  * add debian/patches/fix_spelling_errors.patch to fix some spelling
+    errors discovered by Lintian
 
  -- Jan Dittberner <jandd@debian.org>  Sun, 29 Nov 2009 22:24:47 +0100
 

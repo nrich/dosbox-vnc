@@ -1,0 +1,143 @@
+Author: Jan Dittberner <jandd@debian.org>
+Subject: fix some spelling errors that were discovered by a Lintian run
+
+diff --git a/src/dos/dos_misc.cpp b/src/dos/dos_misc.cpp
+index 7229717..85c34ac 100644
+--- a/src/dos/dos_misc.cpp
++++ b/src/dos/dos_misc.cpp
+@@ -193,7 +193,7 @@ static bool DOS_MultiplexFunctions(void) {
+ 	case 0x4a01:	/* Query free hma space */
+ 	case 0x4a02:	/* ALLOCATE HMA SPACE */
+ 		LOG(LOG_DOSMISC,LOG_WARN)("INT 2f:4a HMA. DOSBox reports none available.");
+-		reg_bx=0;	//number of bytes available in HMA or amount succesfully allocated
++		reg_bx=0;	//number of bytes available in HMA or amount successfully allocated
+ 		//ESDI=ffff:ffff Location of HMA/Allocated memory
+ 		SegSet16(es,0xffff);
+ 		reg_di=0xffff;
+diff --git a/src/dos/dos_programs.cpp b/src/dos/dos_programs.cpp
+index 50a3385..cdc3c6a 100644
+--- a/src/dos/dos_programs.cpp
++++ b/src/dos/dos_programs.cpp
+@@ -90,7 +90,7 @@ public:
+ 						Drives[i_drive] = 0;
+ 						if(i_drive == DOS_GetDefaultDrive()) 
+ 							DOS_SetDrive(toupper('Z') - 'A');
+-						WriteOut(MSG_Get("PROGRAM_MOUNT_UMOUNT_SUCCES"),umount[0]);
++						WriteOut(MSG_Get("PROGRAM_MOUNT_UMOUNT_SUCCESS"),umount[0]);
+ 						break;
+ 					case 1:
+ 						WriteOut(MSG_Get("PROGRAM_MOUNT_UMOUNT_NO_VIRTUAL"));
+@@ -990,7 +990,7 @@ public:
+ 						Drives[i_drive] = 0;
+ 						if (i_drive == DOS_GetDefaultDrive()) 
+ 							DOS_SetDrive(toupper('Z') - 'A');
+-						WriteOut(MSG_Get("PROGRAM_MOUNT_UMOUNT_SUCCES"),umount[0]);
++						WriteOut(MSG_Get("PROGRAM_MOUNT_UMOUNT_SUCCESS"),umount[0]);
+ 						break;
+ 					case 1:
+ 						WriteOut(MSG_Get("PROGRAM_MOUNT_UMOUNT_NO_VIRTUAL"));
+@@ -1156,7 +1156,7 @@ public:
+ 				}
+ 
+ 				newdrive=new fatDrive(temp_line.c_str(),sizes[0],sizes[1],sizes[2],sizes[3],0);
+-				if(!(dynamic_cast<fatDrive*>(newdrive))->created_succesfully) {
++				if(!(dynamic_cast<fatDrive*>(newdrive))->created_successfully) {
+ 					delete newdrive;
+ 					newdrive = 0;
+ 				}
+@@ -1349,7 +1349,7 @@ void DOS_SetupPrograms(void) {
+ 	MSG_Add("PROGRAM_MOUNT_ALREADY_MOUNTED","Drive %c already mounted with %s\n");
+ 	MSG_Add("PROGRAM_MOUNT_USAGE","Usage \033[34;1mMOUNT Drive-Letter Local-Directory\033[0m\nSo a MOUNT c c:\\windows mounts windows directory as the c: drive in DOSBox\n");
+ 	MSG_Add("PROGRAM_MOUNT_UMOUNT_NOT_MOUNTED","Drive %c isn't mounted.\n");
+-	MSG_Add("PROGRAM_MOUNT_UMOUNT_SUCCES","Drive %c has succesfully been removed.\n");
++	MSG_Add("PROGRAM_MOUNT_UMOUNT_SUCCESS","Drive %c has successfully been removed.\n");
+ 	MSG_Add("PROGRAM_MOUNT_UMOUNT_NO_VIRTUAL","Virtual Drives can not be unMOUNTed.\n");
+ 	MSG_Add("PROGRAM_MOUNT_WARNING_WIN","\033[31;1mMounting c:\\ is NOT recommended. Please mount a (sub)directory next time.\033[0m\n");
+ 	MSG_Add("PROGRAM_MOUNT_WARNING_OTHER","\033[31;1mMounting / is NOT recommended. Please mount a (sub)directory next time.\033[0m\n");
+@@ -1417,7 +1417,7 @@ void DOS_SetupPrograms(void) {
+ 		"\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBC\033[0m\n"
+ 		);
+ 	MSG_Add("PROGRAM_INTRO_MOUNT_END",
+-		"When the mount has succesfully completed you can type \033[34;1mc:\033[0m to go to your freshly\n"
++		"When the mount has successfully completed you can type \033[34;1mc:\033[0m to go to your freshly\n"
+ 		"mounted C-drive. Typing \033[34;1mdir\033[0m there will show its contents."
+ 		" \033[34;1mcd\033[0m will allow you to\n"
+ 		"enter a directory (recognised by the \033[33;1m[]\033[0m in a directory listing).\n"
+diff --git a/src/dos/drive_fat.cpp b/src/dos/drive_fat.cpp
+index 2670d3c..ca5cd75 100644
+--- a/src/dos/drive_fat.cpp
++++ b/src/dos/drive_fat.cpp
+@@ -619,7 +619,7 @@ bool fatDrive::allocateCluster(Bit32u useCluster, Bit32u prevCluster) {
+ }
+ 
+ fatDrive::fatDrive(const char *sysFilename, Bit32u bytesector, Bit32u cylsector, Bit32u headscyl, Bit32u cylinders, Bit32u startSector) {
+-	created_succesfully = true;
++	created_successfully = true;
+ 	FILE *diskfile;
+ 	Bit32u filesize;
+ 	struct partTable mbrData;
+@@ -631,14 +631,14 @@ fatDrive::fatDrive(const char *sysFilename, Bit32u bytesector, Bit32u cylsector,
+ 	}
+ 
+ 	diskfile = fopen(sysFilename, "rb+");
+-	if(!diskfile) {created_succesfully = false;return;}
++	if(!diskfile) {created_successfully = false;return;}
+ 	fseek(diskfile, 0L, SEEK_END);
+ 	filesize = (Bit32u)ftell(diskfile) / 1024L;
+ 
+ 	/* Load disk image */
+ 	loadedDisk = new imageDisk(diskfile, (Bit8u *)sysFilename, filesize, (filesize > 2880));
+ 	if(!loadedDisk) {
+-		created_succesfully = false;
++		created_successfully = false;
+ 		return;
+ 	}
+ 
+@@ -677,7 +677,7 @@ fatDrive::fatDrive(const char *sysFilename, Bit32u bytesector, Bit32u cylsector,
+ 
+ 	if(!bootbuffer.sectorsperfat) {
+ 		/* FAT32 not implemented yet */
+-		created_succesfully = false;
++		created_successfully = false;
+ 		return;
+ 	}
+ 
+diff --git a/src/dos/drives.h b/src/dos/drives.h
+index 639fd35..c32b204 100644
+--- a/src/dos/drives.h
++++ b/src/dos/drives.h
+@@ -175,7 +175,7 @@ public:
+ 	bool directoryBrowse(Bit32u dirClustNumber, direntry *useEntry, Bit32s entNum);
+ 	bool directoryChange(Bit32u dirClustNumber, direntry *useEntry, Bit32s entNum);
+ 	imageDisk *loadedDisk;
+-	bool created_succesfully;
++	bool created_successfully;
+ private:
+ 	Bit32u getClusterValue(Bit32u clustNum);
+ 	void setClusterValue(Bit32u clustNum, Bit32u clustValue);
+diff --git a/src/hardware/pic.cpp b/src/hardware/pic.cpp
+index 8d98f29..322a09e 100644
+--- a/src/hardware/pic.cpp
++++ b/src/hardware/pic.cpp
+@@ -315,7 +315,7 @@ void PIC_runIRQs(void) {
+ 				if (!irqs[i].masked && irqs[i].active) {
+ 					/* the irq line is active. it's not masked and
+ 					 * the irq is allowed priority wise. So let's start it */
+-					/* If started succesfully return, else go for the next */
++					/* If started successfully return, else go for the next */
+ 					if(PIC_startIRQ(i)) return;
+ 				}
+ 			}
+diff --git a/src/shell/shell.cpp b/src/shell/shell.cpp
+index e761357..2c548e9 100644
+--- a/src/shell/shell.cpp
++++ b/src/shell/shell.cpp
+@@ -446,7 +446,7 @@ void SHELL_Init() {
+ 	MSG_Add("SHELL_MISSING_PARAMETER","Required parameter missing.\n");
+ 	MSG_Add("SHELL_CMD_CHDIR_ERROR","Unable to change to: %s.\n");
+ 	MSG_Add("SHELL_CMD_CHDIR_HINT","To change to different drive type \033[31m%c:\033[0m\n");
+-	MSG_Add("SHELL_CMD_CHDIR_HINT_2","directoryname is longer than 8 charachters and/or contains spaces.\nTry \033[31mcd %s\033[0m\n");
++	MSG_Add("SHELL_CMD_CHDIR_HINT_2","directoryname is longer than 8 characters and/or contains spaces.\nTry \033[31mcd %s\033[0m\n");
+ 	MSG_Add("SHELL_CMD_CHDIR_HINT_3","You are still on drive Z:, change to a mounted drive with \033[31mC:\033[0m.\n");
+ 	MSG_Add("SHELL_CMD_MKDIR_ERROR","Unable to make: %s.\n");
+ 	MSG_Add("SHELL_CMD_RMDIR_ERROR","Unable to remove: %s.\n");
