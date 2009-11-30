@@ -11,6 +11,7 @@ dosbox (0.73-1) UNRELEASED; urgency=low
       Closes: #540821)
     - add Vcs-Git and Vcs-Browser fields
     - add ${misc:Depends} to Depends
+    - update Standards-Version to 3.8.3 (added debian/README.source)
   * remove non-free src/hardware/fmopl.c and src/hardware/fmopl.h,
     add patch debian/patches/remove_fmopl_code.patch to remove fmopl
     dependencies (Closes: #530824)

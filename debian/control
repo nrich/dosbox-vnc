@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Jan Dittberner <jandd@debian.org>
 Homepage: http://www.dosbox.com/
 Build-Depends: cdbs, debhelper (>= 6), libsdl1.2-dev, libpng12-dev, libsdl-net1.2-dev, libsdl-sound1.2-dev, libasound2-dev
-Standards-Version: 3.7.3
+Standards-Version: 3.8.3
 Vcs-Git: git://git.debian.org/git/collab-maint/dosbox.git
 Vcs-Browser: http://git.debian.org/?p=collab-maint/dosbox.git;a=summary
 
