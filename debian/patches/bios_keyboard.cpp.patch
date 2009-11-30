@@ -1,3 +1,8 @@
+Origin: Debian dosbox package
+Description: define CAN_USE_LOCK in src/ints/bios_keyboard.cpp because Debian's
+ libsdl disables a bad behaviour in SDL that treats numlock and scrolllock
+ different from all other keys.
+Last-Update: 2009-11-30
 --- a/src/ints/bios_keyboard.cpp
 +++ b/src/ints/bios_keyboard.cpp
 @@ -28,7 +28,7 @@

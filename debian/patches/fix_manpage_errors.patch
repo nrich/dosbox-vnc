@@ -1,8 +1,6 @@
 Author: Jan Dittberner <jandd@debian.org>
 Subject: fix manpage errors found by Lintian
-
-diff --git a/docs/dosbox.1 b/docs/dosbox.1
-index 653e57d..fa9e776 100644
+Last-Update: 2009-11-30
 --- a/docs/dosbox.1
 +++ b/docs/dosbox.1
 @@ -96,17 +96,17 @@ Output version information and exit. Useful for frontends.

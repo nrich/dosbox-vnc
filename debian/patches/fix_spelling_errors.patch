@@ -1,8 +1,6 @@
 Author: Jan Dittberner <jandd@debian.org>
 Subject: fix some spelling errors that were discovered by a Lintian run
-
-diff --git a/src/dos/dos_misc.cpp b/src/dos/dos_misc.cpp
-index 7229717..85c34ac 100644
+Last-Update: 2009-11-30
 --- a/src/dos/dos_misc.cpp
 +++ b/src/dos/dos_misc.cpp
 @@ -193,7 +193,7 @@ static bool DOS_MultiplexFunctions(void) {
@@ -14,8 +12,6 @@ index 7229717..85c34ac 100644
  		//ESDI=ffff:ffff Location of HMA/Allocated memory
  		SegSet16(es,0xffff);
  		reg_di=0xffff;
-diff --git a/src/dos/dos_programs.cpp b/src/dos/dos_programs.cpp
-index 50a3385..cdc3c6a 100644
 --- a/src/dos/dos_programs.cpp
 +++ b/src/dos/dos_programs.cpp
 @@ -90,7 +90,7 @@ public:

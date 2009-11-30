@@ -1,3 +1,8 @@
+Author: Jan Dittberner <jandd@debian.org>
+Subject: Remove dependencies on non-free fmopl.c and fmopl.h
+Bug: http://sourceforge.net/tracker/?func=detail&aid=2905763&group_id=52551&atid=467232
+Debian-Bug: http://bugs.debian.org/530824
+Last-Update: 2009-11-30
 --- a/src/hardware/Makefile.am
 +++ b/src/hardware/Makefile.am
 @@ -2,7 +2,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/include
