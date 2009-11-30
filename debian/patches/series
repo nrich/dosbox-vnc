@@ -1,0 +1,4 @@
+bios_keyboard.cpp.patch
+fix_manpage_errors.patch
+fix_spelling_errors.patch
+remove_fmopl_code.patch

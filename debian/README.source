@@ -2,11 +2,7 @@ The original tarball for this package was repackaged to remove the
 files src/hardware/fmopl.c and src/hardware/fmopl.h which are based on
 code from the MAME project under a non-free license.
 
-The package uses the patch system of cdbs. To get the source as it is
-used for building the package you have to apply the patches inside the
-debian/patches directory this can be done in a bourne compatible shell
-(i.e. bash) using the patch command:
+The package uses the quilt patch system to apply patches.
+See /usr/share/doc/quilt/README.source.
 
- for patch in debian/patches/*; do patch -p1 < $patch; done
-
- -- Jan Dittberner <jandd@debian.org>, Mon, 30 Nov 2009 20:09:19 +0100
+ -- Jan Dittberner <jandd@debian.org>, Mon, 30 Nov 2009 21:19:20 +0100

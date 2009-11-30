@@ -2,6 +2,7 @@ dosbox (0.73-1) UNRELEASED; urgency=low
 
   * New upstream release (LP: #382024, Closes: #530940)
   * Include fixes from NMU (Closes: #417159), thanks to James Vega
+  * Switch from cdbs to debhelper 7 and quilt
   * remove old patches, applied upstream:
     debian/patches/dos_keyboard_layout.cpp.patch,
     debian/patches/dyn_fpu.h.patch, debian/patches/gcc-4.3.patch
@@ -12,12 +13,18 @@ dosbox (0.73-1) UNRELEASED; urgency=low
     - add Vcs-Git and Vcs-Browser fields
     - add ${misc:Depends} to Depends
     - update Standards-Version to 3.8.3 (added debian/README.source)
+    - update Depends: remove cdbs, add quilt, update debhelper version to
+      >=7.0.50
   * remove non-free src/hardware/fmopl.c and src/hardware/fmopl.h,
     add patch debian/patches/remove_fmopl_code.patch to remove fmopl
     dependencies (Closes: #530824)
+  * debian/compat:
+    - bump to 7
   * debian/copyright:
     - update upstream copyright years, add package licensing and new
       maintainer information
+  * debian/rules:
+    - use dh7 rule instead of cdbs
   * add debian/watch (Closes: #530941)
   * add debian/README.source with instructions how to produce the
     original tarball
