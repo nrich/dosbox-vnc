@@ -5,8 +5,10 @@ dosbox (0.73-2) unstable; urgency=low
       implies that already
   * debian/rules:
     - remove --with quilt
+  * debian/README.source:
+    - remove quilt notes
 
- -- Jan Dittberner <jandd@debian.org>  Tue, 01 Dec 2009 21:58:28 +0100
+ -- Jan Dittberner <jandd@debian.org>  Tue, 01 Dec 2009 22:07:23 +0100
 
 dosbox (0.73-1) unstable; urgency=low
 

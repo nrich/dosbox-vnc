@@ -2,7 +2,4 @@ The original tarball for this package was repackaged to remove the
 files src/hardware/fmopl.c and src/hardware/fmopl.h which are based on
 code from the MAME project under a non-free license.
 
-The package uses the quilt patch system to apply patches.
-See /usr/share/doc/quilt/README.source.
-
- -- Jan Dittberner <jandd@debian.org>, Mon, 30 Nov 2009 21:19:20 +0100
+ -- Jan Dittberner <jandd@debian.org>, Tue,  1 Dec 2009 22:06:29 +0100
