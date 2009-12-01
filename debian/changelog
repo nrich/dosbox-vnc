@@ -1,3 +1,13 @@
+dosbox (0.73-2) UNRELEASED; urgency=low
+
+  * debian/control:
+    - remove quilt from Build-Depends because source format 3.0 (quilt)
+      implies that already
+  * debian/rules:
+    - remove --with quilt
+
+ -- Jan Dittberner <jandd@debian.org>  Tue, 01 Dec 2009 21:43:04 +0100
+
 dosbox (0.73-1) unstable; urgency=low
 
   * New upstream release (LP: #382024, Closes: #530940)
