@@ -1,4 +1,4 @@
-dosbox for Debian
+DOSBox for Debian
 -----------------
 
 *WARNING*
@@ -7,23 +7,14 @@ dosbox provides access to your local filesystem. This is one of its
 core features, but specially crafted DOS applications can abuse this
 feature.
 
-
-
-dosbox its configfiles are never backwards compatible. If you run into errors
-please remove your configfile and see if it helps.
-See the include dosbox.conf.example for valid options and
-valid optionvalues. It's in general a good idea to create a new configfile
-when there is a new version of dosbox.
+DOSBox's configfiles are never backwards compatible. If you run into
+errors please remove your configfile and see if it helps.
 
 Debian specific changes:
-- Fix error xms call 0e
-- Sync mouse on fullscreen setup
-- Fix debian specific sdl behaviour
-- Fix register usage on x86_64 fpu
-- Some fixes to the keyboardlayout loading.
-
+- remove src/hardware/fmopl.{c,h} and src/hardware/ymf262.{c,h}
+  because of unclear licensing situation
 
 When mounting cdroms (on the host/not in dosbox), specify the unhide option
 if you run into problems.
 
--- Peter Veenstra <spiru@fmf.nl>  Wed, 27 Feb 2008 10:10:36 +0100
+ -- Jan Dittberner <jandd@debian.org>, Sat,  5 Dec 2009 18:30:37 +0100

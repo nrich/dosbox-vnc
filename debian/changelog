@@ -1,9 +1,9 @@
 dosbox (0.73+dfsg1-1) UNRELEASED; urgency=low
 
-  * remove src/hardware/ymf262.c, src/hardware/ymf262.h (Closes: #559443)
-  * add debian/patches/remove_ymf262_code.patch to remove dependencies
-    on ymf262.{c,h}
-  * update debian/patches/series
+  * remove src/hardware/ymf262.c, src/hardware/ymf262.h, add
+    debian/patches/remove_ymf262_code.patch to remove dependencies on
+    ymf262.{c,h}, update debian/patches/series and debian/README.source
+    (Closes: #559443)
   * debian/copyright: refer to GPL-2 explicitly
   * debian/watch: add opts=dversionmangle to calculate correct upstream
     version
@@ -13,7 +13,7 @@ dosbox (0.73+dfsg1-1) UNRELEASED; urgency=low
       debian/patches/series
     - remove debian/dosbox.conf.example because dosbox creates a
       configuration file automatically if it does not exist, update
-      debian/docs
+      debian/docs and debian/README.Debian
 
  -- Jan Dittberner <jandd@debian.org>  Sat, 05 Dec 2009 16:45:05 +0100
 
