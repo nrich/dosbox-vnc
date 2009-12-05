@@ -6,6 +6,8 @@ dosbox (0.73+dfsg1-1) UNRELEASED; urgency=low
     on ymf262.{c,h}
   * update debian/patches/series
   * debian/copyright: refer to GPL-2 explicitly
+  * debian/watch: add opts=dversionmangle to calculate correct upstream
+    version
 
  -- Jan Dittberner <jandd@debian.org>  Sat, 05 Dec 2009 16:45:05 +0100
 
