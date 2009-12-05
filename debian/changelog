@@ -1,3 +1,13 @@
+dosbox (0.73+dfsg1-1) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+  * remove src/hardware/ymf262.c, src/hardware/ymf262.h (Closes: #559443)
+  * add debian/patches/remove_ymf262_code.patch to remove dependencies
+    on ymf262.{c,h}
+  * update debian/patches/series
+
+ -- Jan Dittberner <jandd@debian.org>  Sat, 05 Dec 2009 16:45:05 +0100
+
 dosbox (0.73-2) unstable; urgency=low
 
   * debian/control:

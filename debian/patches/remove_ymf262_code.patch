@@ -1,0 +1,75 @@
+Author: Jan Dittberner <jandd@debian.org>
+Subject: Remove dependencies on non-free ymf262.c and ymf262.h
+Bug: http://sourceforge.net/tracker/?func=detail&aid=2905763&group_id=52551&atid=467232
+Debian-Bug: http://bugs.debian.org/559443
+Last-Update: 2009-12-05
+--- a/src/dosbox.cpp
++++ b/src/dosbox.cpp
+@@ -509,10 +509,10 @@
+ 	Pstring->Set_values(oplmodes);
+ 	Pstring->Set_help("Type of OPL emulation. On 'auto' the mode is determined by sblaster type. All OPL modes are Adlib-compatible, except for 'cms'.");
+ 
+-	const char* oplemus[]={ "default", "compat", "fast", "old", 0};
++	const char* oplemus[]={ "default", "compat", "fast", 0};
+ 	Pstring = secprop->Add_string("oplemu",Property::Changeable::WhenIdle,"default");
+ 	Pstring->Set_values(oplemus);
+-	Pstring->Set_help("Provider for the OPL emulation. compat or old might provide better quality (see oplrate as well).");
++	Pstring->Set_help("Provider for the OPL emulation. compat might provide better quality (see oplrate as well).");
+ 
+ 	Pint = secprop->Add_int("oplrate",Property::Changeable::WhenIdle,22050);
+ 	Pint->Set_values(oplrates);
+--- a/src/hardware/Makefile.am
++++ b/src/hardware/Makefile.am
+@@ -2,7 +2,7 @@
+ 
+ SUBDIRS = serialport
+ 
+-EXTRA_DIST = opl.cpp opl.h ymf262.h ymf262.c adlib.h dbopl.h
++EXTRA_DIST = opl.cpp opl.h adlib.h dbopl.h
+ 
+ noinst_LIBRARIES = libhardware.a
+ 
+--- a/src/hardware/adlib.cpp
++++ b/src/hardware/adlib.cpp
+@@ -115,41 +115,6 @@
+ #undef OSD_CPU_H
+ #undef TL_TAB_LEN
+ 
+-namespace old_OPL3 {
+-	#define OPL3_INTERNAL_FREQ    14318180  // The OPL3 operates at ~14.3MHz
+-	#define HAS_YMF262 1
+-	#include "ymf262.c"
+-
+-	struct Handler : public Adlib::Handler {
+-		virtual void WriteReg( Bit32u reg, Bit8u val ) {
+-			OPL3WriteReg( YMF262[0], reg, val );
+-		}
+-		virtual Bit32u WriteAddr( Bit32u port, Bit8u val ) {
+-			OPL3Write( YMF262[0], port, val );
+-			return YMF262[0]->address;
+-		}
+-		virtual void Generate( MixerChannel* chan, Bitu samples ) {
+-			Bit16s buf[2][1024];
+-			while( samples > 0 ) {
+-				Bitu todo = samples > 1024 ? 1024 : samples;
+-				samples -= todo;
+-				YMF262UpdateOne( 0, buf[0], todo );
+-				chan->AddSamples_s16( todo, buf[0] );
+-			}
+-		}
+-		virtual void Init( Bitu rate ) {
+-			if ( YMF262Init( 1, OPL3_INTERNAL_FREQ, rate )) {
+-				E_Exit("Can't create OPL3 Emulator");	
+-			};
+-		}
+-		~Handler() {
+-			YMF262Shutdown();
+-		}
+-	};
+-}
+-
+-
+-
+ #define RAW_SIZE 1024
+ 
+ 
