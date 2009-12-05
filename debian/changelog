@@ -5,6 +5,7 @@ dosbox (0.73+dfsg1-1) UNRELEASED; urgency=low
   * add debian/patches/remove_ymf262_code.patch to remove dependencies
     on ymf262.{c,h}
   * update debian/patches/series
+  * debian/copyright: refer to GPL-2 explicitly
 
  -- Jan Dittberner <jandd@debian.org>  Sat, 05 Dec 2009 16:45:05 +0100
 
