@@ -1,6 +1,5 @@
 dosbox (0.73+dfsg1-1) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
   * remove src/hardware/ymf262.c, src/hardware/ymf262.h (Closes: #559443)
   * add debian/patches/remove_ymf262_code.patch to remove dependencies
     on ymf262.{c,h}
@@ -8,6 +7,13 @@ dosbox (0.73+dfsg1-1) UNRELEASED; urgency=low
   * debian/copyright: refer to GPL-2 explicitly
   * debian/watch: add opts=dversionmangle to calculate correct upstream
     version
+  * incorporate upstream suggestions:
+    - remove debian/patches/bios_keyboard.cpp.patch, upstream uses
+      putenv("SDL_DISABLE_LOCK_KEYS=1") in src/gui/sdlmain.cpp, update
+      debian/patches/series
+    - remove debian/dosbox.conf.example because dosbox creates a
+      configuration file automatically if it does not exist, update
+      debian/docs
 
  -- Jan Dittberner <jandd@debian.org>  Sat, 05 Dec 2009 16:45:05 +0100
 
