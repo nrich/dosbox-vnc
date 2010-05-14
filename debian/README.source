@@ -1,7 +1,0 @@
-The original tarball for this package was repackaged to remove the
-files src/hardware/fmopl.c and src/hardware/fmopl.h which are based on
-code from the MAME project under a non-free license. The files
-src/hardware/ymf262.c and src/hardware/ymf262.h were also removed
-because of their unclear licensing situation.
-
- -- Jan Dittberner <jandd@debian.org>, Sat,  5 Dec 2009 18:32:37 +0100
