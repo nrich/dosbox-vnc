@@ -1,3 +1,2 @@
 version=3
-opts=dversionmangle=s/\+dfsg\d+$// \
-  http://sf.net/dosbox/dosbox-(.*)\.tar\.gz
+http://sf.net/dosbox/dosbox-(.*)\.tar\.gz
