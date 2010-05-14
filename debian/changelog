@@ -1,4 +1,4 @@
-dosbox (0.74-1) UNRELEASED; urgency=low
+dosbox (0.74-1) unstable; urgency=low
 
   * New upstream release.
   * remove debian/README.source because repacking is not required
@@ -12,7 +12,7 @@ dosbox (0.74-1) UNRELEASED; urgency=low
   * refresh debian/patches/fix_manpage_errors.patch
   * debian/control: update Standards-Version to 3.8.4, no changes needed
 
- -- Jan Dittberner <jandd@debian.org>  Fri, 14 May 2010 09:07:28 +0200
+ -- Jan Dittberner <jandd@debian.org>  Fri, 14 May 2010 09:57:20 +0200
 
 dosbox (0.73+dfsg1-1) unstable; urgency=low
 
