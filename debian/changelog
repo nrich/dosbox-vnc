@@ -3,6 +3,8 @@ dosbox (0.74-1) UNRELEASED; urgency=low
   * New upstream release.
   * remove debian/README.source because repacking is not required
   * remove version mangling from debian/watch
+  * update debian/README.Debian, remove outdated note regarding removed
+    files
 
  -- Jan Dittberner <jandd@debian.org>  Fri, 14 May 2010 09:07:28 +0200
 

@@ -10,11 +10,7 @@ feature.
 DOSBox's configfiles are never backwards compatible. If you run into
 errors please remove your configfile and see if it helps.
 
-Debian specific changes:
-- remove src/hardware/fmopl.{c,h} and src/hardware/ymf262.{c,h}
-  because of unclear licensing situation
-
 When mounting cdroms (on the host/not in dosbox), specify the unhide option
 if you run into problems.
 
- -- Jan Dittberner <jandd@debian.org>, Sat,  5 Dec 2009 18:30:37 +0100
+ -- Jan Dittberner <jandd@debian.org>, Fri, 14 May 2010 09:22:24 +0200
