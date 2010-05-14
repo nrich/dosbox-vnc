@@ -9,6 +9,7 @@ dosbox (0.74-1) UNRELEASED; urgency=low
    - debian/patches/fix_spelling_errors.patch
    - debian/patches/remove_fmopl_code.patch
    - debian/patches/remove_ymf262_code.patch
+  * refresh debian/patches/fix_manpage_errors.patch
 
  -- Jan Dittberner <jandd@debian.org>  Fri, 14 May 2010 09:07:28 +0200
 
