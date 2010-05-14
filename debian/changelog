@@ -1,3 +1,9 @@
+dosbox (0.74-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+ -- Jan Dittberner <jandd@debian.org>  Fri, 14 May 2010 09:07:28 +0200
+
 dosbox (0.73+dfsg1-1) unstable; urgency=low
 
   * remove src/hardware/ymf262.c, src/hardware/ymf262.h, add
