@@ -2,7 +2,7 @@
 
 
 /*
- *  Copyright (C) 2002-2009  The DOSBox Team
+ *  Copyright (C) 2002-2010  The DOSBox Team
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -19,6 +19,9 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+
+/* Define if building universal (internal helper macro) */
+#undef AC_APPLE_UNIVERSAL_BUILD
 
 /* Compiling on BSD */
 #undef BSD
@@ -173,6 +176,9 @@
 /* Define to the one symbol short name of this package. */
 #undef PACKAGE_TARNAME
 
+/* Define to the home page for this package. */
+#undef PACKAGE_URL
+
 /* Define to the version of this package. */
 #undef PACKAGE_VERSION
 
@@ -203,9 +209,17 @@
 /* Version number of package */
 #undef VERSION
 
-/* Define to 1 if your processor stores words with the most significant byte
-   first (like Motorola and SPARC, unlike Intel and VAX). */
-#undef WORDS_BIGENDIAN
+/* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
+   significant byte first (like Motorola and SPARC, unlike Intel). */
+#if defined AC_APPLE_UNIVERSAL_BUILD
+# if defined __BIG_ENDIAN__
+#  define WORDS_BIGENDIAN 1
+# endif
+#else
+# ifndef WORDS_BIGENDIAN
+#  undef WORDS_BIGENDIAN
+# endif
+#endif
 
 /* Define to empty if `const' does not conform to ANSI C. */
 #undef const
@@ -242,8 +256,10 @@
 
 #if C_HAS_BUILTIN_EXPECT
 #define GCC_UNLIKELY(x) __builtin_expect((x),0)
+#define GCC_LIKELY(x) __builtin_expect((x),1)
 #else
 #define GCC_UNLIKELY(x) (x)
+#define GCC_LIKELY(x) (x)
 #endif
 
 
@@ -286,9 +302,9 @@ typedef         double     Real64;
 #if SIZEOF_INT_P == 4
   typedef Bit32u Bitu;
   typedef Bit32s Bits;
- #else
+#else
   typedef Bit64u Bitu;
   typedef Bit64s Bits;
- #endif
+#endif
 
 
