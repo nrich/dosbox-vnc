@@ -10,6 +10,7 @@ dosbox (0.74-1) UNRELEASED; urgency=low
    - debian/patches/remove_fmopl_code.patch
    - debian/patches/remove_ymf262_code.patch
   * refresh debian/patches/fix_manpage_errors.patch
+  * debian/control: update Standards-Version to 3.8.4, no changes needed
 
  -- Jan Dittberner <jandd@debian.org>  Fri, 14 May 2010 09:07:28 +0200
 
