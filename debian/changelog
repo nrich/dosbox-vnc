@@ -3,6 +3,8 @@ dosbox (0.74-2) UNRELEASED; urgency=low
   * Fix "FTBFS: ../../include/dos_inc.h:543:78: error: expected primary-
     expression before ',' token" add patch from upstream SVN as
     debian/patches/ftbfs624976_upstream_svn3691.patch (Closes: #624976)
+  * fix another spelling error in man page in
+    debian/patches/fix_manpage_errors.patch
 
  -- Jan Dittberner <jandd@debian.org>  Mon, 02 May 2011 20:47:26 +0200
 
