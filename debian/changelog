@@ -1,4 +1,4 @@
-dosbox (0.74-2) UNRELEASED; urgency=low
+dosbox (0.74-2) unstable; urgency=low
 
   * Fix "FTBFS: ../../include/dos_inc.h:543:78: error: expected primary-
     expression before ',' token" add patch from upstream SVN as
@@ -9,7 +9,7 @@ dosbox (0.74-2) UNRELEASED; urgency=low
     debian/control
   * fix description synopsis to not start with an article
 
- -- Jan Dittberner <jandd@debian.org>  Mon, 02 May 2011 20:47:26 +0200
+ -- Jan Dittberner <jandd@debian.org>  Mon, 02 May 2011 21:20:37 +0200
 
 dosbox (0.74-1) unstable; urgency=low
 
