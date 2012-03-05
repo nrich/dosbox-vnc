@@ -2,6 +2,7 @@ dosbox (0.74-3) UNRELEASED; urgency=low
 
   * Fix manpage bugs by updating debian/patches/fix_manpage_errors.patch
     (Closes: #644936)
+  * Bump Standards-Version to 3.9.3 (no changes)
 
  -- Jan Dittberner <jandd@debian.org>  Sun, 04 Mar 2012 18:56:13 +0100
 
