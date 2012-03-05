@@ -1,4 +1,4 @@
-dosbox (0.74-3) UNRELEASED; urgency=low
+dosbox (0.74-3) unstable; urgency=low
 
   * Fix manpage bugs by updating debian/patches/fix_manpage_errors.patch
     (Closes: #644936)
@@ -6,7 +6,7 @@ dosbox (0.74-3) UNRELEASED; urgency=low
   * change Build-Depends, change from libpng12-dev to libpng-dev (Closes:
     #662303)
 
- -- Jan Dittberner <jandd@debian.org>  Sun, 04 Mar 2012 18:56:13 +0100
+ -- Jan Dittberner <jandd@debian.org>  Mon, 05 Mar 2012 21:07:13 +0100
 
 dosbox (0.74-2) unstable; urgency=low
 
