@@ -3,7 +3,7 @@ Section: otherosfs
 Priority: optional
 Maintainer: Jan Dittberner <jandd@debian.org>
 Homepage: http://www.dosbox.com/
-Build-Depends: debhelper (>= 7.0.50), libsdl1.2-dev, libpng12-dev,
+Build-Depends: debhelper (>= 7.0.50), libsdl1.2-dev, libpng-dev,
  libsdl-net1.2-dev, libsdl-sound1.2-dev, libasound2-dev
 Standards-Version: 3.9.3
 Vcs-Git: git://git.debian.org/git/collab-maint/dosbox.git
