@@ -92,6 +92,9 @@
 /* Define to 1 to use a unaligned memory access */
 #undef C_UNALIGNED_MEMORY
 
+/* Define to 1 to enable vncserver support */
+#undef C_VNC_SERVER
+
 /* define to 1 if you have XKBlib.h and X11 lib */
 #undef C_X11_XKB
 

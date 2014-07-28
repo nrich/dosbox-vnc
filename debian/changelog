@@ -1,3 +1,9 @@
+dosbox (0.74-4ubuntu1) UNRELEASED; urgency=medium
+
+  * Add VNC client input/server output support 
+
+ -- Neil Richardson <nrich@dosbox.killwhitey.org>  Mon, 28 Jul 2014 20:58:29 +0800
+
 dosbox (0.74-3) unstable; urgency=low
 
   * Fix manpage bugs by updating debian/patches/fix_manpage_errors.patch
