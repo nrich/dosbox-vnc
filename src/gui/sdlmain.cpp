@@ -925,6 +925,8 @@ static void vnc_sdl_keyboard(rfbBool down, rfbKeySym key, rfbClientPtr cl) {
 
     if (key == XK_Escape)
         e.key.keysym.sym = SDLK_ESCAPE;
+    if (key == XK_BackSpace) 
+        e.key.keysym.sym = SDLK_BACKSPACE;
     else if (key == XK_Left)
         e.key.keysym.sym = SDLK_LEFT;
     else if (key == XK_Right)
@@ -941,6 +943,97 @@ static void vnc_sdl_keyboard(rfbBool down, rfbKeySym key, rfbClientPtr cl) {
         e.key.keysym.sym = SDLK_SPACE;
     else if (key == XK_Control_L)
         e.key.keysym.sym = SDLK_LCTRL;
+    else if (key == XK_Control_R)
+        e.key.keysym.sym = SDLK_RCTRL;
+    else if (key == XK_grave)
+        e.key.keysym.sym = SDLK_BACKQUOTE;
+    else if (key == XK_plus)
+    {
+        e.key.keysym.mod = KMOD_LSHIFT;
+        printf("plus\n");
+        e.key.keysym.sym = SDLK_PLUS;
+    }
+    else if (key == XK_minus)
+        e.key.keysym.sym = SDLK_MINUS;
+    else if (key == XK_equal)
+    {
+        printf("equals\n");
+        e.key.keysym.sym = SDLK_EQUALS;
+    }
+    else if (key == XK_0)
+        e.key.keysym.sym = SDLK_0;
+    else if (key == XK_1)
+        e.key.keysym.sym = SDLK_1;
+    else if (key == XK_2)
+        e.key.keysym.sym = SDLK_2;
+    else if (key == XK_3)
+        e.key.keysym.sym = SDLK_3;
+    else if (key == XK_4)
+        e.key.keysym.sym = SDLK_4;
+    else if (key == XK_5)
+        e.key.keysym.sym = SDLK_5;
+    else if (key == XK_6)
+        e.key.keysym.sym = SDLK_6;
+    else if (key == XK_7)
+        e.key.keysym.sym = SDLK_7;
+    else if (key == XK_8)
+        e.key.keysym.sym = SDLK_8;
+    else if (key == XK_9)
+        e.key.keysym.sym = SDLK_9;
+    else if (key == XK_A || key == XK_a)
+        e.key.keysym.sym = SDLK_a;
+    else if (key == XK_B || key == XK_b)
+        e.key.keysym.sym = SDLK_b;
+    else if (key == XK_C || key == XK_c)
+        e.key.keysym.sym = SDLK_c;
+    else if (key == XK_D || key == XK_d)
+        e.key.keysym.sym = SDLK_d;
+    else if (key == XK_E || key == XK_e)
+        e.key.keysym.sym = SDLK_e;
+    else if (key == XK_F || key == XK_f)
+        e.key.keysym.sym = SDLK_f;
+    else if (key == XK_G || key == XK_g)
+        e.key.keysym.sym = SDLK_g;
+    else if (key == XK_H || key == XK_h)
+        e.key.keysym.sym = SDLK_h;
+    else if (key == XK_I || key == XK_i)
+        e.key.keysym.sym = SDLK_i;
+    else if (key == XK_J || key == XK_j)
+        e.key.keysym.sym = SDLK_j;
+    else if (key == XK_K || key == XK_k)
+        e.key.keysym.sym = SDLK_k;
+    else if (key == XK_L || key == XK_l)
+        e.key.keysym.sym = SDLK_l;
+    else if (key == XK_M || key == XK_m)
+        e.key.keysym.sym = SDLK_m;
+    else if (key == XK_N || key == XK_n)
+        e.key.keysym.sym = SDLK_n;
+    else if (key == XK_O || key == XK_o)
+        e.key.keysym.sym = SDLK_o;
+    else if (key == XK_P || key == XK_p)
+        e.key.keysym.sym = SDLK_p;
+    else if (key == XK_Q || key == XK_q)
+        e.key.keysym.sym = SDLK_q;
+    else if (key == XK_R || key == XK_r)
+        e.key.keysym.sym = SDLK_r;
+    else if (key == XK_S || key == XK_s)
+        e.key.keysym.sym = SDLK_s;
+    else if (key == XK_T || key == XK_t)
+        e.key.keysym.sym = SDLK_t;
+    else if (key == XK_U || key == XK_u)
+        e.key.keysym.sym = SDLK_u;
+    else if (key == XK_V || key == XK_v)
+        e.key.keysym.sym = SDLK_v;
+    else if (key == XK_W || key == XK_w)
+        e.key.keysym.sym = SDLK_w;
+    else if (key == XK_X || key == XK_x)
+        e.key.keysym.sym = SDLK_x;
+    else if (key == XK_Y || key == XK_y)
+        e.key.keysym.sym = SDLK_y;
+    else if (key == XK_Z || key == XK_z)
+        e.key.keysym.sym = SDLK_z;
+    else
+        printf("Unknown key %d\n", key);
 
     SDL_PushEvent(&e); 
     SDL_PumpEvents();
@@ -954,6 +1047,8 @@ typedef struct ClientData {
 
 static void vnc_sdl_mouse(int buttonMask, int x, int y, rfbClientPtr cl) {
     ClientData *cd = (ClientData *)cl->clientData;
+
+return;
 
     if (buttonMask != cd->buttonMask) {    
         SDL_Event e;
@@ -1353,8 +1448,8 @@ static void GUI_StartUp(Section * sec) {
 		sdl.vnc.server->serverFormat.blueShift=0;
 		sdl.vnc.server->port = sdl.vnc.port;
 		sdl.vnc.server->kbdAddEvent = vnc_sdl_keyboard;
-                sdl.vnc.server->ptrAddEvent = vnc_sdl_mouse;
-                sdl.vnc.server->newClientHook = vnc_sdl_connect;
+                //sdl.vnc.server->ptrAddEvent = vnc_sdl_mouse;
+                //sdl.vnc.server->newClientHook = vnc_sdl_connect;
 		rfbInitServer(sdl.vnc.server);
 		rfbRunEventLoop(sdl.vnc.server,-1,TRUE);
 	}
